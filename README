@@ -1,0 +1,20 @@
+SMS Server
+
+James Park-Watt 2012 jimmypw@gmail.com
+
+Requirements:
+- A GSM device with an AT command set that runs over serial. I developed this on a Siemens TC65. I /think/ some other devices that I have used previously had the correct commands.
+- An activated sim card.
+- A redis server
+- python
+-- pyserial
+-- pyredis
+- Nodejs
+-- redis
+
+It works like this.
+
+Start the redis server
+Start the SMS driver. it needs to connect to the redis server.
+Start the SMS-webservice. You may need to modify it a bit to get it running properly on your network.
+
