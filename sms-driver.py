@@ -34,7 +34,7 @@ def sendSMS(_rec, _message):
   waitFor("OK")
 
 init()
-r = redis.Redis(host='10.3.0.64', port=6379, db=0)
+r = redis.Redis(host='10.3.0.7', port=6379, db=0)
 
 while 1:
   data = r.lpop('messages')
