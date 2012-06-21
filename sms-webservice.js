@@ -16,6 +16,11 @@ var server = http.createServer(function(_req, _res) {
   hmac.update(_req.url);
   if (hmac.digest('hex') === _req.headers.auth) {
     processRequest(_req, _res)
+    // Do valid response if above returns true.
+  } else {
+    // Return invalid response
+    _res.writeHead(401, {'Content-Type': 'application/json'});
+    _res.write(JSON.stringify({'error': 'true', 'value': 'Bad Auth'}));
   }
   _res.end();
 });
